@@ -1,0 +1,44 @@
+\section*{Experimental Results}
+\addcontentsline{toc}{section}{Experimental Results}
+
+% add table with column message signal shape, message signal, carrier signal, f_m(kHz), f_c(kHz) modulated signal, AM Spectrum
+\newcommand{\imgwidth}{5cm}
+\begin{sidewaystable}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \textbf{Message Signal Shape} & sine & sine & square & square \\
+        \hline
+        \textbf{Message Signal} & \includegraphics[width=\imgwidth]{images/10_khz_ms.PNG} & \includegraphics[width=\imgwidth]{images/20_khz_ms.PNG} & \includegraphics[width=\imgwidth]{images/10_khz_msq.PNG} & \includegraphics[width=\imgwidth]{images/20_khz_msq.PNG} \\
+        \hline
+        \textbf{Carrier Signal} & \multicolumn{4}{c}{\includegraphics[width=\imgwidth]{images/1_mhz_carrier.PNG}} \\
+        \hline
+        \textbf{$f_m$ (KHz)} & 10 & 20 & 10 & 20 \\
+        \hline
+        \textbf{$f_c$ (KHz)} & \multicolumn{4}{c}{1} \\
+        \hline
+        \textbf{Modulated Signal} & \includegraphics[width=\imgwidth]{images/modulated_10khz_ms_1mhz_c.PNG} & \includegraphics[width=\imgwidth]{images/modulated_20_khz_ms_1mhz_c.PNG}  & \includegraphics[width=\imgwidth]{images/modulated_10khz_msq_1mhz_c.PNG} & \includegraphics[width=\imgwidth]{images/modulated_20_khz_msq_1mhz_c.PNG}  \\
+        \hline
+        \textbf{AM Spectrum} & \includegraphics[width=\imgwidth]{images/fft_10khz_ms_1mhz_c.PNG}   & \includegraphics[width=\imgwidth]{images/fft_20_khz_ms_1mhz_c.PNG}  & \includegraphics[width=\imgwidth]{images/fft_10khz_msq_1mhz_c.PNG} & \includegraphics[width=\imgwidth]{images/fft_20_khz_msq_1mhz_c.PNG} \\
+        \hline
+    \end{tabular}
+    \caption{Impact of frequency on the modulated signal for $A_m$ = 200 mV and $V_c$ = 50 mV}
+    \label{tab:freq_impact}
+\end{sidewaystable}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \textbf{\shortstack{$A_m$ \\ (mV)}} & \textbf{\shortstack{$A_c$ \\ (mV)}} & \textbf{AM Signal} & \textbf{AM Spectrum} & \textbf{Modulation Index} \\
+        \hline
+        300 & 500 & \includegraphics[width=\imgwidth]{images/am_300_ac_500.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_300_ac_500.PNG} & 1 \\
+        \hline
+        300 & 300 & \includegraphics[width=\imgwidth]{images/am_300_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_300_ac_300.PNG} & 1 \\
+        \hline
+        500 & 300 & \includegraphics[width=\imgwidth]{images/am_500_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_500_ac_300.PNG} & 1 \\    
+        \hline
+    \end{tabular}
+    \caption{Impact of modulation index on AM signal for $f_m$ = 10 KHz and $f_c$ = 1 MHz}
+    \label{tab:mod_index_impact}
+\end{table}

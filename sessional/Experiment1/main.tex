@@ -1,0 +1,39 @@
+\documentclass[12pt]{report}
+
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{rotating}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+% Title Page
+\include{title}
+
+\tableofcontents
+\newpage
+
+% objectives 
+\input{objectives.tex}
+
+% theory
+\input{theory.tex}
+
+% Apparatus
+\input{apparatus.tex}
+
+% Experimental Results
+\input{exp_results.tex}
+
+% Discussion
+\input{discussion.tex}
+
+% Precautions
+\input{precautions.tex}
+
+% post experiment questions
+\input{post_exp_q.tex}
+
+\end{document}
