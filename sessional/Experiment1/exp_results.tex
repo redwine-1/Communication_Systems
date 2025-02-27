@@ -4,6 +4,8 @@
 % add table with column message signal shape, message signal, carrier signal, f_m(kHz), f_c(kHz) modulated signal, AM Spectrum
 \newcommand{\imgwidth}{5cm}
 \begin{sidewaystable}
+    \caption{Impact of frequency on the modulated signal for $A_m$ = 200 mV and $V_c$ = 50 mV}
+    \label{tab:freq_impact}
     \centering
     \begin{tabular}{c|c|c|c|c}
         \hline
@@ -22,12 +24,12 @@
         \textbf{AM Spectrum} & \includegraphics[width=\imgwidth]{images/fft_10khz_ms_1mhz_c.PNG}   & \includegraphics[width=\imgwidth]{images/fft_20_khz_ms_1mhz_c.PNG}  & \includegraphics[width=\imgwidth]{images/fft_10khz_msq_1mhz_c.PNG} & \includegraphics[width=\imgwidth]{images/fft_20_khz_msq_1mhz_c.PNG} \\
         \hline
     \end{tabular}
-    \caption{Impact of frequency on the modulated signal for $A_m$ = 200 mV and $V_c$ = 50 mV}
-    \label{tab:freq_impact}
 \end{sidewaystable}
 
 \begin{table}
     \centering
+    \caption{Impact of modulation index on AM signal for $f_m$ = 10 KHz and $f_c$ = 1 MHz}
+    \label{tab:mod_index_impact}
     \begin{tabular}{c|c|c|c|c}
         \hline
         \textbf{\shortstack{$A_m$ \\ (mV)}} & \textbf{\shortstack{$A_c$ \\ (mV)}} & \textbf{AM Signal} & \textbf{AM Spectrum} & \textbf{Modulation Index} \\
@@ -38,7 +40,5 @@
         \hline
         500 & 300 & \includegraphics[width=\imgwidth]{images/am_500_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_500_ac_300.PNG} & 1.909 \\    
         \hline
-    \end{tabular}
-    \caption{Impact of modulation index on AM signal for $f_m$ = 10 KHz and $f_c$ = 1 MHz}
-    \label{tab:mod_index_impact}
+    \end{tabular}   
 \end{table}

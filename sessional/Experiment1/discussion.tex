@@ -2,8 +2,11 @@
 \section*{Discussion}
 \addcontentsline{toc}{section}{Discussion}
 At first the probe compensation was performed on the oscilloscope probes to ensure proper readings. Following this, the Voltage-Controlled Oscillator - Local Oscillator (VCO-LO) in the AM/SSB TRANSMITTER block was set to 1000 kHz using a two-post connector. Oscilloscope was used to verify that generated signal was indeed 1000kHz. \\
+
 To fill up the TABLE I carrier voltage was set to 50mV and on the signal generator message signal voltage was set to 200mV. Then by changing message frequency Table I was filled up. Subsequently, message frequency was set to 10kHz and Table II was filled up by changing amplitude of message and carrier signals. \\
+
 From Table I, it is observed that the modulated signal remains consistent across all message signals, aligning with theoretical expectations. When a sine wave is used as the message signal, the AM spectrum exhibits three distinct peaks, corresponding to the carrier frequency and its upper and lower sidebands, which is the expected outcome. Conversely, when a square wave is used as the message signal, the AM spectrum contains multiple frequency components, resulting in several peaks, as anticipated due to the harmonic content of the square wave.\\
+
 For Table II, the modulation index was measured as 1 for the first two readings, indicating 100\% modulation. However, for the last reading, the modulation index increased to 1.909, suggesting overmodulation. The modulation index was calculated using: 
 \[
     \mu = \frac{A_{max} - A_{min}}{A_{max} + A_{min}}

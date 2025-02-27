@@ -5,9 +5,14 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{rotating}
+\usepackage{caption}
 \usepackage{tikz}
 
-\usetikzlibrary{circuits.ee.IEC, positioning}
+\captionsetup[table]{labelfont=bf, labelsep=period, name=Table, textfont=it, position=above} % Change position to above
+\renewcommand{\thetable}{\Roman{table}} 
+
+
+\usetikzlibrary{circuits.ee.IEC, positioning} % for circuit diagrams
 \geometry{a4paper, margin=1in}
 
 \begin{document}
@@ -17,9 +22,6 @@
 
 \tableofcontents
 \newpage
-% title 
-\section*{Experiment Name: \\ Generation and Analysis of Conventional AM Signal.}
-\addcontentsline{toc}{section}{Experiment Name}
 
 % objectives 
 \input{objectives.tex}
