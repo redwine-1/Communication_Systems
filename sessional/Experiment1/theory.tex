@@ -28,6 +28,7 @@ Thus, the modulated signal becomes:
 \end{equation}
 \begin{equation}
     s(t) = A_c\cos(2\pi f_c t) + \frac{A_c\mu}{2}\cos\{2\pi (f_c + f_m) t\} + \frac{A_c\mu}{2}\cos\{2\pi (f_c - f_m) t\}
+    \label{eq:single_am}
 \end{equation}
 
 where,\\
@@ -36,10 +37,11 @@ For Conventional AM, the modulation index must be less than 1.\\
 
 The fourier transform of the modulated signal is given by:
 \[
-    s(f)=\frac{A_c}{2}[\delta(f+f_c) + \delta(f-f_c)] + \frac{\mu A_c}{4}[\delta(f+f_c+f_m) + \delta(f-f_c-f_m)] + \delta(f-f_c)] 
+    s(f)=\frac{A_c}{2}[\delta(f+f_c) + \delta(f-f_c)] + \frac{\mu A_c}{4}[\delta(f+f_c+f_m) + \delta(f-f_c-f_m)] 
 \]
 \begin{equation}
     \frac{\mu A_c}{4}[\delta(f+f_c-f_m) + \delta(f-f_c+f_m)]
+    \label{eq:single_am_fft}
 \end{equation}
 
 \begin{figure}

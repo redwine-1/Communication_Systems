@@ -1,11 +1,95 @@
 \section*{Post Experiment Questions}
 \addcontentsline{toc}{section}{Post Experiment Questions}
 \begin{enumerate}
-    \item If the carrier signal frequency ($f_c$) is 1000 kHz and the message signal frequency ($f_m$) is
-    2 kHz, how many frequencies are present in the AM signal?
-    \item If the carrier signal frequency ($f_c$) is 1000 kHz and the message signal frequency ($f_m$) is
-    2 kHz, what is the lower sideband (LSB) frequency?
-    \item What is the impact of the message signal on the modulation index?
-    \item What are the benefits of adding the carrier wave to the multiplication of message and
-    carrier signals?
+     \item \textbf{If the carrier signal frequency ($f_c$) is 1000 kHz and the message signal frequency ($f_m$) is
+        2 kHz, how many frequencies are present in the AM signal?} \\
+        As seen in equation \ref{eq:single_am}, there are 3 frequencies present in the AM signal. They are:
+        \begin{itemize}
+            \item Carrier frequency ($f_c$)
+            \item Upper sideband frequency ($f_c + f_m$)
+            \item Lower sideband frequency ($f_c - f_m$)
+        \end{itemize}
+        Given: $f_c = 1000$ kHz, $f_m = 2$ kHz.\\
+        Therefore, the frequencies present in the AM signal are:
+        \begin{itemize}
+            \item Carrier frequency: $1000$ kHz
+            \item Upper sideband frequency: $1000 + 2 = 1002$ kHz
+            \item Lower sideband frequency: $1000 - 2 = 998$ kHz
+        \end{itemize}
+
+        \item \textbf{If the carrier signal frequency ($f_c$) is 1000 kHz and the message signal frequency ($f_m$) is
+        2 kHz, what is the lower sideband (LSB) frequency?} \\
+        Given: $f_c = 1000$ kHz, $f_m = 2$ kHz.\\
+        Therefore, the lower sideband frequency is:
+        \[
+            f_{LSB} = f_c - f_m = 1000 - 2 = 998 \text{ kHz}
+        \]
+
+        \item \textbf{What is the impact of the message signal on the modulation index?} \\
+        Modulation index ($\mu$) is given by:
+        \[
+            \mu = k_a A_m
+        \]
+        where, $k_a$ is the amplitude sensitivity of the modulator and $A_m$ is the amplitude of the message signal.\\
+        Therefore, the modulation index is directly proportional to the amplitude of the message signal. As the amplitude of the message signal increases, the modulation index also increases. 
+        \item \textbf{What is a balanced modulator? Describe its operation with a proper circuit diagram.}\\
+        Balanced modulator consists of two identical AM modulators. Two modulators are used to suppress the carrier.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+            % Define nodes
+            \node (osc) [draw, rectangle, minimum width=1.5cm, minimum height=1cm] {Local Oscillator};
+            \node (carrier) [right=.8cm of osc] {$c(t) = A_c \cos(2\pi f_c t)$};
+            \node (mod1) [above=1.5cm of carrier, draw, rectangle, minimum width=1.5cm, minimum height=1cm] {AM Modulator};
+            \node (mod2) [below=1.5cm of carrier, draw, rectangle, minimum width=1.5cm, minimum height=1cm] {AM Modulator};
+            \node (sum) [right=5cm of carrier, draw, circle, minimum size=0.8cm] {\Large$\sum$};
+            \node (plus) [above=.1cm of sum, xshift=.3cm] {\Large$+$};
+            \node (minus) [below=.1cm of sum, xshift=.3cm] {\Large$-$};
+            \node (output) [right=.5cm of sum] {$2 A_c m(t)\cos(2\pi f_c t)$};
+            
+            % Define inputs
+            \node (msg) [left=2cm of mod1] {$m(t)$};
+            \node (negmsg) [left=2cm of mod2] {$-m(t)$};
+            
+            % Define outputs
+            \node (s1) [right=.5cm of mod1] {$A_c [1+m(t)]\cos(2\pi f_c t)$};
+            \node (s2) [right=.5cm of mod2] {$A_c [1-m(t)]\cos(2\pi f_c t)$};
+            
+            % Draw connections
+            \draw[->] (osc) -- (carrier);
+            \draw[->] (carrier) -- (mod1);
+            \draw[->] (carrier) -- (mod2);
+            \draw[->] (msg) -- (mod1);
+            \draw[->] (negmsg) -- (mod2);
+            \draw[->] (mod1) -- (s1);
+            \draw[->] (mod2) -- (s2);
+            \draw[->] (s1) -| (sum);
+            \draw[->] (s2) -| (sum);
+            \draw[->] (sum) -- (output);
+            \end{tikzpicture}
+            \caption{Balanced Modulator Circuit Diagram}
+            \label{fig:balanced_modulator}
+        \end{figure}
+        The same carrier $c(t) = A_c \cos(2\pi f_c t)$ is feed to both of the AM modulators. positive message signal $m(t)$ is feed to one modulator and negative message signal $-m(t)$ is feed to the other modulator. The outputs of both modulators are added together to get the balanced modulator output.
+        Output of the upper modulator is:
+        \begin{equation}
+            s_1(t) = A_c [1+m(t)]\cos(2\pi f_c t)
+        \end{equation}
+        The output of the lower modulator is:
+        \begin{equation}
+            s_2(t) = A_c [1-m(t)]\cos(2\pi f_c t)
+        \end{equation}
+        The output is obtained by subtracting  $s_2(t)$ from $s_1(t)$. The output of the balanced modulator is:
+        \begin{equation}
+            s(t) = 2 A_c m(t)\cos(2\pi f_c t)
+        \end{equation}
+    
+        \item \textbf{What are the benefits of adding the carrier wave to the multiplication of message and
+        carrier signals?}\\
+        The benefits of adding the carrier wave to the multiplication of message and carrier signals are:
+        \begin{itemize}
+            \item The demodulation process is simplified when the carrier wave is added to the multiplication of message and carrier signals as no coherent detection is required for demodulation when modulation index is less than 1.
+            \item In coherent detection, the carrier wave is required to be in phase with the received signal. This is not required when the carrier wave is added to the multiplication of message and carrier signals.
+            \item The cost of the receiver is reduced as no coherent detection is required.
+        \end{itemize}
 \end{enumerate}

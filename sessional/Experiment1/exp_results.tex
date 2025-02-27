@@ -3,7 +3,7 @@
 
 % add table with column message signal shape, message signal, carrier signal, f_m(kHz), f_c(kHz) modulated signal, AM Spectrum
 \newcommand{\imgwidth}{5cm}
-\begin{sidewaystable}[ht]
+\begin{sidewaystable}
     \centering
     \begin{tabular}{c|c|c|c|c}
         \hline
@@ -26,7 +26,7 @@
     \label{tab:freq_impact}
 \end{sidewaystable}
 
-\begin{table}[ht]
+\begin{table}
     \centering
     \begin{tabular}{c|c|c|c|c}
         \hline
@@ -36,7 +36,7 @@
         \hline
         300 & 300 & \includegraphics[width=\imgwidth]{images/am_300_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_300_ac_300.PNG} & 1 \\
         \hline
-        500 & 300 & \includegraphics[width=\imgwidth]{images/am_500_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_500_ac_300.PNG} & 1 \\    
+        500 & 300 & \includegraphics[width=\imgwidth]{images/am_500_ac_300.PNG} & \includegraphics[width=\imgwidth]{images/fft_am_500_ac_300.PNG} & 1.909 \\    
         \hline
     \end{tabular}
     \caption{Impact of modulation index on AM signal for $f_m$ = 10 KHz and $f_c$ = 1 MHz}
