@@ -1,0 +1,40 @@
+\section*{Experimental Results}
+\addcontentsline{toc}{section}{Experimental Results}
+
+% add table with column message message signal, carrier signal,modulation Index, modulated signal, AM Spectrum, Recovered Signal
+\begin{table}
+    \centering
+    \caption{Impact of frequency on the modulated signal for  $A_m = 1$ volt, $f_m = 2$ KHz  and $V_c = 1$ volt, $f_c = 1 $MHz  }
+    \begin{tabular}{c|c|c|c}
+        \hline
+        \textbf{Message Signal}     & \multicolumn{3}{c}{\includegraphics[width=0.3\textwidth]{images/2khz_message.jpg}} \\
+        \hline
+        \textbf{Carrier Signal}     & \multicolumn{3}{c}{\includegraphics[width=0.3\textwidth]{images/1mhz_carrier.jpg}} \\
+        \hline
+        \textbf{Modulation Index}   & 0.46                                                                  & 1                                                                 & 2.44 \\
+        \hline
+        \textbf{Modulated Signal}   & \includegraphics[width=0.25\textwidth]{images/0.46m_am.jpg}           & \includegraphics[width=0.25\textwidth]{images/1m_am.jpg}          & \includegraphics[width=0.25\textwidth]{images/2.44m_am.jpg}\\
+        \hline
+        \textbf{AM Spectrum}        & \includegraphics[width=0.25\textwidth]{images/0.46m_demod_fft.jpg}    & \includegraphics[width=0.25\textwidth]{images/1m_demod_fft.jpg}   & \includegraphics[width=0.25\textwidth]{images/2.44m_demod_fft.jpg}\\
+        \hline
+        \textbf{Recovered Signal}   & \includegraphics[width=0.25\textwidth]{images/0.46m_demod.jpg}        & \includegraphics[width=0.25\textwidth]{images/1m_demod.jpg}       & \includegraphics[width=0.25\textwidth]{images/2.44m_demod.jpg}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{sidewaystable}
+    \caption{Demodulated Massage Signal}
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        \hline
+        \multicolumn{4}{c}{Message Signal} \vline                                                                                                       & \multicolumn{4}{c}{Demodulated Message Signal} \\
+        \hline
+        \textbf{Frequency}  & \textbf{Amplitude ($V_{pp})$}     & \textbf{Phase}    & \textbf{signal}                                                   & \textbf{Frequency}    & \textbf{Amplitude ($V_{pp}$}) & \textbf{Phase}    & \textbf{Signal} \\
+        \hline
+        1.997 KHz           & 224 mV                            & $0^\circ$         & \includegraphics[width=0.2\textwidth]{images/2khz_message.jpg}    & 1.997 KHz             & 256 mV                        &  $180^\circ$      & \includegraphics[width=0.2\textwidth]{images/0.46m_demod.jpg} \\
+        \hline
+        1.99 KHz            & 228 mV                            &$0^\circ$          & \includegraphics[width=0.2\textwidth]{images/2khz_message.jpg}    & 1.99 KHz              & 444 mV                        & $180^\circ$       & \includegraphics[width=0.2\textwidth]{images/1m_demod.jpg} \\
+        \hline
+        2 KHz               & 224 mV                            & $0^\circ$         & \includegraphics[width=0.2\textwidth]{images/2khz_message.jpg}    & 2 KHz                 & 320 mV                        & $180^\circ$       & \includegraphics[width=0.2\textwidth]{images/2.44m_demod.jpg} \\
+    \end{tabular}
+\end{sidewaystable}

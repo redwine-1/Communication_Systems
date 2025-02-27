@@ -1,0 +1,49 @@
+\documentclass[12pt]{report}
+
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{caption} 
+
+\captionsetup[table]{labelfont=bf, labelsep=period, name=Table, textfont=it, position=above} % Change position to above
+\renewcommand{\thetable}{\Roman{table}} 
+
+\usetikzlibrary{circuits.ee.IEC, positioning}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+% Title Page
+\include{title.tex}
+
+\tableofcontents
+\newpage
+% title 
+\section*{Experiment Name: \\ To Study the Characteristics of AM Demodulation.}
+\addcontentsline{toc}{section}{Experiment Name}
+
+% objectives 
+\input{objectives.tex}
+
+% theory
+\input{theory.tex}
+
+% Apparatus
+\input{apparatus.tex}
+
+% Experimental Results
+\input{exp_results.tex}
+
+% Discussion
+\input{discussion.tex}
+
+% Precautions
+\input{precautions.tex}
+
+% post experiment questions
+\input{post_exp_q.tex}
+
+\end{document}

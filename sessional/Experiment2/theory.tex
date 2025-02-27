@@ -1,0 +1,46 @@
+\section*{Theory}
+\addcontentsline{toc}{section}{Theory}
+
+Amplitude modulation is a process where the amplitude of a carrier
+wave is varied about a mean value linearly with the message signal. Amplitude modulated signal:
+
+\begin{equation}
+    s(t) = A_c[1 + k_a m(t)]\cos(2\pi f_c t)
+\end{equation}
+
+where,\\
+\begin{itemize}
+    \item $s(t)$ is the modulated signal.
+    \item $A_c$ is the carrier amplitude.
+    \item $m(t)$ is the message signal.
+    \item $f_c$ is the carrier frequency.
+    \item $k_a$ is the amplitude sensitivity of the modulator.
+\end{itemize}
+
+For single-tone modulation, the message signal is given by:
+\begin{equation}
+    m(t) = A_m \cos(2\pi f_m t)
+\end{equation}
+
+Thus, the modulated signal becomes:
+\begin{equation}
+    s(t) = A_c[1 + \mu \cos(2\pi f_m t)]\cos(2\pi f_c t) \\
+\end{equation}
+\begin{equation}
+    s(t) = A_c\cos(2\pi f_c t) + \frac{A_c\mu}{2}\cos\{2\pi (f_c + f_m) t\} + \frac{A_c\mu}{2}\cos\{2\pi (f_c - f_m) t\}
+    \label{eq:single_am}
+\end{equation}
+
+where,\\
+$\mu = k_a A_m$ is the modulation index.
+For Conventional AM, the modulation index must be less than 1.\\
+
+The fourier transform of the modulated signal is given by:
+\[
+    s(f)=\frac{A_c}{2}[\delta(f+f_c) + \delta(f-f_c)] + \frac{\mu A_c}{4}[\delta(f+f_c+f_m) + \delta(f-f_c-f_m)] 
+\]
+\begin{equation}
+    \frac{\mu A_c}{4}[\delta(f+f_c-f_m) + \delta(f-f_c+f_m)]
+    \label{eq:single_am_fft}
+\end{equation}
+
