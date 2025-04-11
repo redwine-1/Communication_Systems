@@ -2,7 +2,13 @@
 \addcontentsline{toc}{section}{Theory}
 
 Amplitude modulation is a process where the amplitude of a carrier
-wave is varied about a mean value linearly with the message signal. Amplitude modulated signal:
+wave is varied about a mean value linearly with the message signal.
+%%=======================================================================
+%% sub-section: Modulation
+%%=======================================================================
+
+\subsection*{Modulation}
+Amplitude modulated signal:
 
 \begin{equation}
     s(t) = A_c[1 + k_a m(t)]\cos(2\pi f_c t)
@@ -44,3 +50,41 @@ The fourier transform of the modulated signal is given by:
     \label{eq:single_am_fft}
 \end{equation}
 
+%%=======================================================================
+%% sub-section: Demodulation
+%%=======================================================================
+\subsection*{Demodulation}
+Demodulation is the process of extracting the message signal from the modulated signal. There are several methods to demodulate an AM signal. Some of the methods are:
+\begin{itemize}
+    \item \textbf{Envelope Detection:}\\
+    One of the simplest methods to demodulate an AM signal is envelope detection. The envelope detector is a non-linear circuit that extracts the envelope of the modulated signal. The envelope detector consists of a diode, a resistor, and a capacitor. The diode rectifies the modulated signal, and the capacitor smoothens the rectified signal. The output of the envelope detector is the message signal. The envelope detector is shown in Figure \ref{fig:envelope_detector}.
+    %% Add circuit diagram
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{images/envelope_detector.png}
+            \caption{Envelope Detector}
+            \label{fig:envelope_detector}
+        \end{center}
+    \end{figure}
+
+    If the resistance of the diode is $r_f$, the charging time constant of the capacitor must be short compared with the carrier period. That is : 
+    \begin{equation}
+        \tau_{charge} = (r_f+ R_s ) C << \frac{1}{f_c}
+    \end{equation}
+
+    The discharging time constant of the capacitor must be long compared with the carrier period, but not so long that the capacitor does not discharge between the peaks of the modulated signal. That is:
+    \begin{equation}
+        \tau_{discharge} =\frac{1}{f_c} << R_l C   << \frac{1}{W}
+        \label{eq:discharge_time}
+    \end{equation}
+    where W is the message bandwidth.
+    \item \textbf{Coherent Detection} \\
+    Coherent detection is a method where the carrier signal is regenerated at the receiver. The modulated signal is multiplied by the carrier signal to extract the message signal. The coherent detector is shown in Figure \ref{fig:coherent_detector}.
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{images/coherent_detector.png}
+            \caption{Coherent Detector}
+            \label{fig:coherent_detector}
+        \end{center}
+    \end{figure}
+\end{itemize}

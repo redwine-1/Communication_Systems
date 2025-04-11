@@ -3,7 +3,64 @@
 
 \begin{enumerate}
     \item \textbf{Why cannot we recover the message signal when the modulation index is more than 1?}\\
+    Ans: The modulation index is the ratio of the message signal amplitude to the carrier signal amplitude. When the modulation index is more than 1, the carrier signal amplitude is less than the message signal amplitude, due to this phase reversal occurs. The phase reversal causes the message signal to be lost during demodulation. This is evident on Table \ref{tab:modulated_signal} for modulation index 2.44.\\
     \item \textbf{If the message and carrier amplitudes are 2 and 3 volts, respectively, and the modulation index is 0.8, how much power of the modulated signal will be wasted?}\\
+    Ans: The power of the carrier is given by: 
+    \begin{equation}
+        P_c = \frac{A_c^2}{2}  
+    \end{equation}
+
+    The power of the message signal is given by:
+    \begin{equation}
+        P_m = \frac{\mu^2A_c^2}{8} + \frac{\mu^2A_c^2}{8} = \frac{\mu^2A_c^2}{4}
+    \end{equation}
+    So the total power is given by:
+    \begin{equation}
+        P_t = P_c + P_m = \frac{A_c^2}{2} + \frac{\mu^2A_c^2}{4}
+    \end{equation}
+    The power wasted is given by:
+    \begin{equation}
+        P_w = 1 - \frac{P_m}{P_t} = 1 - \frac{\mu^2}{2 + \mu^2}
+    \end{equation}
+    Substituting the values, we get:
+    \begin{equation}
+        P_w = 1 - \frac{0.8^2}{2 + 0.8^2} = 0.7575
+    \end{equation}
+    Therefore, 75.75\% of the power is wasted.\\
     \item \textbf{If the message and carrier signal frequency are 2 KHz and 100 KHz, respectively, what is the bandwidth of the modulated signal?}\\
+    Ans: Given,
+    \begin{equation}
+        f_m = 2 KHz, f_c = 100 KHz
+    \end{equation}
+%     \[
+%     s(f)=\frac{A_c}{2}[\delta(f+f_c) + \delta(f-f_c)] + \frac{\mu A_c}{4}[\delta(f+f_c+f_m) + \delta(f-f_c-f_m)] 
+% \]
+% \begin{equation}
+%     \frac{\mu A_c}{4}[\delta(f+f_c-f_m) + \delta(f-f_c+f_m)]
+%     \label{eq:single_am_fft}
+% \end{equation}
+    By substituting the values in Equation \ref{eq:single_am_fft}, we get:
+    \[
+        s(f) = \frac{A_c}{2}[\delta(f+100 KHz) + \delta(f-100 KHz)] + \frac{\mu A_c}{4}[\delta(f+102 KHz) + \delta(f-98 KHz)] +
+    \]
+    \begin{equation}
+        \frac{\mu A_c}{4}[\delta(f+98 KHz) + \delta(f-102 KHz)]
+    \end{equation}
+    Hence the bandwidth of the modulated signal is 4 KHz.\\
     \item \textbf{If the message and carrier signal frequencies are 2 KHz and 100 KHz, respectively, what is the allowable value of RC of an envelope detector?}\\
+    Ans: Using Equation \ref{eq:discharge_time} the allowable value of RC can be calculated.
+
+    Time period of the carrier signal is given by:
+    \begin{equation}
+        T = \frac{1}{f_c} = \frac{1}{100 KHz} = 1 \times 10^{-8} s
+    \end{equation}
+    The reciprocal of the bandwidth of the message signal is:
+    \begin{equation}
+        \frac{1}{W} = 5 \times 10^{-4} s
+    \end{equation}
+    The allowable value of RC is:
+    \begin{equation}
+        1 \times 10^{-8} << RC << 5 \times 10^{-4}
+    \end{equation}
+
 \end{enumerate}
